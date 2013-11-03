@@ -27,11 +27,11 @@
 					<a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> Criar Usu&aacute;rios</a>
 					<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="access.php?id=1"><i class="icon-pencil"></i> Professor</a></li>
+						<li><a href="access.php?id=3"><i class="icon-pencil"></i> Professor</a></li>
 						<li class="divider"></li>
-						<li><a href="access.php?id=2"><i class="icon-user"></i> Aluno</a></li>
+						<li><a href="access.php?id=4"><i class="icon-user"></i> Aluno</a></li>
 						<li class="divider"></li>
-						<li><a href="access.php?id=0"><i class="icon-eye-open"></i> Administrador</a></li>
+						<li><a href="access.php?id=2"><i class="icon-eye-open"></i> Administrador</a></li>
 					</ul>
 				</div>
 			</div>

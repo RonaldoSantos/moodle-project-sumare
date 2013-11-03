@@ -1,8 +1,8 @@
 <?php
-	include 'config.php';
-	include 'select.php';
-	include 'insert.php';
-	include 'update.php';
+	include '../functions/config.php';
+	include '../functions/select.php';
+	include '../functions/insert.php';
+	include '../functions/update.php';
 
 	session_start();
 
@@ -31,16 +31,16 @@
 					log_datetime_user($row['id'], $username);
 					switch ($row['type_users']) {
 						case 1:
-							header('location:../ead-admin?id='.$row['id']);
+							header('location:../ead-admin/');
 						break;
 						case 2:
-							header('location:../ead-admin?id='.$row['id']);
+							header('location:../ead-admin/');
 						break;
 						case 3:
-							header('location:../ead-teacher?id='.$row['id']);
+							header('location:../ead-teacher/');
 						break;
 						case 4:
-							header('location:../ead-student?id='.$row['id']);
+							header('location:../ead-student/');
 						break;
 						
 						default:

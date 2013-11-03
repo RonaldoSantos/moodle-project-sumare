@@ -14,6 +14,6 @@
 	$username = $row['username'];
 
 	if (!isset($username)) {
-		header('location:../#error_session');
+		header('location:/index.php');
 	}
 ?>

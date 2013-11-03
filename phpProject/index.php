@@ -49,7 +49,7 @@
 						<li><a href="#about">Sobre</a></li>
 						<li><a href="#contact">Contato</a></li>
 					</ul>
-					<form action="functions/login.php" method="post" id="form_login" class="navbar-form pull-right">
+					<form action="server/login.php" method="post" id="form_login" class="navbar-form pull-right">
 						<input type="text" placeholder="Login" name="username" id="username" class="span2" />
 						<input type="password" placeholder="Senha" name="password" id="password" class="span2" />
 						<button type="submit" id="submitLogin" name="send" class="btn">Acessar</button>
