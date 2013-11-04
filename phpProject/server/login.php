@@ -26,7 +26,7 @@
 
 				if ($row['status'] == 1) {
 
-					register_session($username);
+					register_session($row['id'], $row['type_users'], $username);
 
 					log_datetime_user($row['id'], $username);
 					switch ($row['type_users']) {
@@ -57,7 +57,9 @@
 	 	}
 	}
 
-	function register_session ($username) {
+	function register_session ($id, $type_users, $username) {
+		$_SESSION['id'] = $id;
+		$_SESSION['type_users'] = $type_users;
 		$_SESSION['username'] = $username;
 	}
 

@@ -36,8 +36,6 @@
 				<label>Informações:</label>
 				<textarea rows="3" style="width: 300px;" placeholder="Informações" name="info" id="info"></textarea>
 
-				<input type="hidden" id="nivel" name="type_user" value="<?php echo $id = $_GET['id']; ?>"/>
-
 				<label>Senha:</label>
 				<input class="input-block-level" style="width:300px;" type="password" placeholder="" id="senha" name="password" required />
 

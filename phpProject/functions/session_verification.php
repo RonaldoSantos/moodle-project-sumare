@@ -10,7 +10,6 @@
 
 	$row = mysql_fetch_array($query);
 
-
 	$username = $row['username'];
 
 	if (!isset($username)) {
