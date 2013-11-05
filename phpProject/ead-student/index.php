@@ -13,28 +13,7 @@
 	<div class="container">
 		
 		<div class="row-fluid">
-			<div class="span3">
-				<div class="well sidebar-nav sidebar-teacher">
-					<ul class="nav nav-list">
-						<li class="nav-header">Área do Aluno</li>
-						<li class="active"><a href="index.php">Aluno</a></li>
-						<li class="nav-header">Disciplinas Online</li>
-						<li><a href="discipline.php#sistemas-operacionais">Sistemas Operacionais</a></li>
-						<li><a href="#">História</a></li>
-						<li><a href="#">Algoritmos</a></li>
-						<li><a href="#">Java</a></li>
-						<li class="nav-header">Disciplinas Presenciais</li>
-						<li><a href="#">Banco de Dados</a></li>
-						<li><a href="#">Compiladores</a></li>
-						<li><a href="#">Redes de Computadores</a></li>
-						<li><a href="#">GTI - Gestão de Tecnologia da Informação</a></li>
-						<li class="nav-header">Sidebar</li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-					</ul>
-				</div><!--/.well -->
-			</div><!--/span-->
+			<?php include '../server/dinamic_sidebar.php'; ?>
 			<div class="span9">
 				<div class="hero-unit">
 					<h1>Bem Vindo, Aluno!</h1>
