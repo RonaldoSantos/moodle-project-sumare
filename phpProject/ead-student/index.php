@@ -1,6 +1,8 @@
 <?php 
 	include '../functions/session_verification.php';
 	include '../includes/header.php';
+
+	$_SESSION['id_discipline'] = NULL;
 ?>
 	<style>
 		body {

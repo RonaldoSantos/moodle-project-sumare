@@ -13,6 +13,6 @@
 	$username = $row['username'];
 
 	if (!isset($username)) {
-		header('location:/index.php');
+		header('location:../index.php');
 	}
 ?>
