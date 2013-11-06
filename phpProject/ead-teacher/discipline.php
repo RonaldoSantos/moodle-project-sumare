@@ -1,4 +1,10 @@
-<?php include '../includes/header.php'; ?>
+<?php 
+	include '../functions/config.php';
+	include '../functions/session_verification.php';
+	include '../includes/header.php';
+	
+	$_SESSION['id_discipline'] = $_GET['id'];
+?>
 	<style>
 		body {
 			padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -10,29 +16,7 @@
 	<div class="container">
 		
 		<div class="row-fluid">
-			<div class="span3">
-				<div class="well sidebar-nav sidebar-teacher">
-					<ul class="nav nav-list">
-						<li class="nav-header">Área do Professor</li>
-						<li><a href="index.php">Professor</a></li>
-						<li class="nav-header">Disciplinas Online</li>
-						<li class="active"><a href="discipline.php#sistemas-operacionais">Sistemas Operacionais</a></li>
-						<li><a href="#">História</a></li>
-						<li><a href="#">Algoritmos</a></li>
-						<li><a href="#">Java</a></li>
-						<li class="nav-header">Disciplinas Presenciais</li>
-						<li><a href="#">Banco de Dados</a></li>
-						<li><a href="#">Compiladores</a></li>
-						<li><a href="#">Redes de Computadores</a></li>
-						<li><a href="#">GTI - Gestão de Tecnologia da Informação</a></li>
-						<li class="nav-header">Sidebar</li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-					</ul>
-				</div><!--/.well -->
-			</div><!--/span-->
-			
+			<?php include '../server/dinamic_sidebar.php'; ?>			
 			<div class="span9">
 				<div class="page-header">
 					<h1>Sistemas Operacionais</h1>
