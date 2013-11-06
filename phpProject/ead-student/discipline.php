@@ -3,7 +3,9 @@
 	include '../functions/session_verification.php';
 	include '../includes/header.php';
 
-	$_SESSION['id_discipline'] = $_GET['id'];
+
+	$id = $_GET['id'];
+	$_SESSION['id_discipline'] = $id;
 ?>
 	<style>
 		body {
@@ -21,50 +23,40 @@
 			?>
 			<div class="span9">
 				<div class="page-header">
-					<h1>Sistemas Operacionais</h1>
+					<?php 
+						$query_disciplines = mysql_query(select("disciplines", "*", "id=$id", ""));
+						$row_disciplines = mysql_fetch_array($query_disciplines);
+						$disciplines_title = $row_disciplines['discipline_title'];
+						echo "<h1>$disciplines_title</h1>";
+					?>
 				</div>
 
 				<div class="accordion" id="accordion2">
-					<div class="accordion-group">
-						<div class="accordion-heading">
-							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse1">Aula 1</a>
-						</div>
-						<div id="collapse1" class="accordion-body collapse in">
-							<div class="accordion-inner">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, molestiae nobis iure excepturi veniam. Sapiente dolores deserunt sequi. Pariatur, voluptas debitis vero quo dolores provident ratione dicta animi quos perspiciatis!
-							</div>
-						</div>
-					</div>
-					<div class="accordion-group">
-						<div class="accordion-heading">
-							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2">Aula 2</a>
-						</div>
-						<div id="collapse2" class="accordion-body collapse">
-							<div class="accordion-inner">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, molestiae nobis iure excepturi veniam. Sapiente dolores deserunt sequi. Pariatur, voluptas debitis vero quo dolores provident ratione dicta animi quos perspiciatis!
-							</div>
-						</div>
-					</div>
-					<div class="accordion-group">
-						<div class="accordion-heading">
-							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">Aula 3</a>
-						</div>
-						<div id="collapse3" class="accordion-body collapse">
-							<div class="accordion-inner">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, molestiae nobis iure excepturi veniam. Sapiente dolores deserunt sequi. Pariatur, voluptas debitis vero quo dolores provident ratione dicta animi quos perspiciatis!
-							</div>
-						</div>
-					</div>
-					<div class="accordion-group">
-						<div class="accordion-heading">
-							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">Aula 4</a>
-						</div>
-						<div id="collapseOne" class="accordion-body collapse">
-							<div class="accordion-inner">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, molestiae nobis iure excepturi veniam. Sapiente dolores deserunt sequi. Pariatur, voluptas debitis vero quo dolores provident ratione dicta animi quos perspiciatis!
-							</div>
-						</div>
-					</div>
+					<?php 
+						$query_topics = mysql_query("select * from topics where id_discipline=$id");
+						$row_topics = mysql_fetch_array($query_topics);
+						if ($row_topics == NULL) {
+							echo "A Najara diz que não tem topicos na disciplina";
+							exit();
+						};
+
+						do {
+							$id_topic = $row_topics['id'];
+							$topic_title = $row_topics['topic_title'];
+							$topic_description = $row_topics['topic_description'];
+
+							echo "<div class=\"accordion-group\">
+									<div class=\"accordion-heading\">
+										<a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordion2\" href=\"#collapse$id_topic\">$topic_title</a>
+									</div>
+									<div id=\"collapse$id_topic\" class=\"accordion-body collapse\">
+										<div class=\"accordion-inner\">
+											$topic_description
+										</div>
+									</div>
+								</div>";
+						} while ($row_topics = mysql_fetch_array($query_topics));
+					?>
 				</div>
 			</div>
 		</div>
