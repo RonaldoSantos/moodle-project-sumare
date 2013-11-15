@@ -9,7 +9,11 @@
 		}
 	</style>
 
-	<?php include '../includes/loginBar.php'; ?>
+	<?php 
+		include '../includes/loginBar.php';
+		$type_new_user = $_GET['id'];
+		$_SESSION['type_new_user'] = $type_new_user;
+	?>
 
 	<div class="container">
 		<!-- Form Access -->
@@ -34,13 +38,85 @@
 				<input class="input-block-level" style="width:300px;" type="text" placeholder="Login" name="username" id="usuario" required />
 				
 				<label>Informações:</label>
-				<textarea rows="3" style="width: 300px;" placeholder="Informações" name="info" id="info"></textarea>
+				<textarea rows="3" style="width: 288px;" placeholder="Informações" name="info" id="info"></textarea>
 
 				<label>Senha:</label>
 				<input class="input-block-level" style="width:300px;" type="password" placeholder="" id="senha" name="password" required />
 
 				<label>Confirmação da senha:</label>
 				<input class="input-block-level" style="width:300px;" type="password" id="password_confimation" name="password_repeat" required />
+				
+				<label class="input-block-level">Vincular a uma disciplina:</label>
+				<label class="radio inline">
+					<input type="radio" name="vinculateUser" value="1">
+					Sim
+				</label>
+				<label class="radio inline">
+					<input type="radio" name="vinculateUser" value="0" checked>
+					Não
+				</label>
+				<br>
+				<br>
+
+				<div class="vinculateUsers">
+
+					<form class="form-search">
+						<input type="text" placeholder="nome da disciplina ou curso" class="input-large search-query">
+						<button type="submit" class="btn">Pesquisar disciplina ou curso</button>
+					</form>
+
+					<table class="table table-hover">
+						<caption>Disciplinas</caption>
+						<thead>
+							<tr>
+								<th>Nome do curso</th>
+								<th>Nome da disciplina</th>
+								<th>Descrição da disciplina</th>
+								<th>Tipo da disciplina</th>
+								<th>Turma</th>
+								<th>Vincular</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>...</td>
+								<td>...</td>
+								<td>...</td>
+								<td>...</td>
+								<td>...</td>
+								<td>
+									<label class="checkbox">
+										<input type="checkbox" style="margin-left: 5px;">
+									</label>
+								</td>
+							</tr>
+							<tr class="info">
+								<td>...</td>
+								<td>...</td>
+								<td>...</td>
+								<td>...</td>
+								<td>...</td>
+								<td>
+									<label class="checkbox">
+										<input type="checkbox" style="margin-left: 5px;" checked="checked">
+									</label>
+								</td>
+							</tr>
+							<tr>
+								<td>...</td>
+								<td>...</td>
+								<td>...</td>
+								<td>...</td>
+								<td>...</td>
+								<td>
+									<label class="checkbox">
+										<input type="checkbox" style="margin-left: 5px;">
+									</label>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 				<br>
 				<button type="submit" id="send"class="btn">Enviar</button>
 			</fieldset>

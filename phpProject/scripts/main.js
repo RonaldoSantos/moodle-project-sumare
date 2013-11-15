@@ -83,4 +83,22 @@ require(['jquery', 'bootstrap', 'ckeditor'], function ($, bootstrap, ckeditor) {
 			window.location.href = 'ead-student/';
 		}
 	});
+
+	var validateLogin = function () {
+		var user = $('#username'),
+			pass = $('#password'),
+			regexUser = /[a-zA-Z0-9_]{3}/gi,
+			regexPass = /\w{4}/;
+
+
+		console.log(regexUser.test(user.val()));
+		console.log(regexPass.test(pass.val()));
+	};
+
+	// $('#submitLogin').on('click', function (event) {
+	// 	event.preventDefault();
+
+	// 	validateLogin();
+	// 	return false;
+	// });
 });
