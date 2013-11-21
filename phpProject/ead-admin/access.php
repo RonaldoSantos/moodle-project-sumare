@@ -59,7 +59,6 @@
 				<br>
 
 				<div class="vinculateUsers">
-
 					<form class="form-search">
 						<input type="text" placeholder="nome da disciplina ou curso" class="input-large search-query">
 						<button type="submit" class="btn">Pesquisar disciplina ou curso</button>
